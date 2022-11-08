@@ -1,0 +1,160 @@
+@import '../scss/_config.scss';
+
+.op-display {
+    width: 50%;
+    height: max-content;
+}
+
+.display-container {
+    width: 97%;
+    height: 90%;
+    display: flex;
+    flex-direction: column;
+    margin-left: 10px;
+    background: $blue;
+    box-shadow: 0px 10px 30px rgba(1,1,1,.75);
+    padding-bottom: 10px;
+
+    span {
+        color: $yellow;
+        text-align: center;
+    }
+}
+
+.image-container {
+    width: 100%;
+    display: flex;
+    justify-items: center;
+    background: url('../assets/images/fog.webp'), linear-gradient(to top, $blue 0%, $dark-blue 100%);
+    background-size: cover;
+    top: 0;
+    position: relative;
+    padding-top: 10px;
+
+    span {
+        font-size: 70px;
+        width: 100%;
+        position: absolute;
+        bottom: 0px;
+        padding: 2%;
+        background: linear-gradient(to top, $blue 20%, transparent 100%);
+    }
+
+    img {
+        width: 50%;
+        height: auto;
+        margin: 0 auto;
+    }
+    
+}
+
+.text-container {
+    padding: 0 20px;
+
+    p {
+        text-align: center;
+        color: white;
+        margin-bottom: 6px;
+    }
+}
+
+.op-info {
+    padding-bottom: 20px;
+}
+
+.display-title {
+    width: 100%;
+    height: 40px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    font-size: 50px;
+
+    img {
+        height: 50px;
+        width: 50px;
+        margin-right: 10px;
+    }
+}
+
+.op-location {
+    width: 100%;
+    height: 24px;
+    margin-bottom: 8px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+
+    img {
+        height: 16px;
+        margin-left: 5px;
+        align-self: center;
+    }
+}
+
+.equipment {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    margin-top: 30px;
+
+    span {
+        font-size: 40px;
+    }
+}
+
+.ability, 
+.weapon {
+    display: flex;
+    flex-direction: column;
+
+    p {
+        width: 300px;
+    }
+
+    p:first-of-type {
+        font-size: 20px;
+        font-weight: 600;
+    }
+}
+
+.ability-image,
+.weapon-image  {
+    width: 300px;
+    height: 150px;
+    background: $light-blue;
+    margin: 10px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.ability img {
+    max-width: 290px;
+    max-height: 140px;
+}
+
+@media only screen and (max-width: 1024px) {
+    .op-display {
+        width: 100%;
+    }
+}
+
+@media only screen and (max-width: 1400px) {
+    .equipment {
+        flex-direction: column;
+    }
+
+    .ability, 
+    .weapon {
+        width: max-content;
+        justify-content: center;
+        margin: 0 auto;
+    }
+
+    .weapon {
+        margin-top: 30px;
+    }
+}

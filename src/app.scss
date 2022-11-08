@@ -1,0 +1,50 @@
+@import './scss/_config.scss';
+
+@font-face {
+    font-family: 'Ghost Clan Regular';
+    src: url('./assets/fonts/ghostclan-webfont.woff2') format('woff2'),
+         url('./assets/fonts/ghostclan-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+* {
+    margin-top: 0;
+    margin-left: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    width: 100%;
+    font-family: 'Roboto', sans-serif;
+    background: $dark-blue;
+}
+
+span {
+    font-family: 'Ghost Clan Regular';
+}
+
+p, a {
+    font-size: 16px;
+    letter-spacing: .75px;
+    line-height: 24px;
+}
+
+a {
+    color: $yellow;
+}
+
+section {
+    display: flex;
+    flex-direction: row;
+    position: relative;
+    top: 60px;
+    padding-top: 20px;
+}
+
+@media only screen and (max-width: 1024px) {
+    section {
+        flex-direction: column-reverse;
+    }
+}

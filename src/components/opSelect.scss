@@ -1,0 +1,53 @@
+@import '../scss/_config.scss';
+
+.op-select {
+    width: 50%;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.op-container {
+    width: 97.5%;
+    height: auto;
+    display: grid;
+    grid-template-columns: repeat(4, 25%);
+    margin: 0 auto;
+}
+
+.op-tile {
+    height: min-content;
+    background-image: linear-gradient($blue 30%, $yellow 100%);
+    border: 2px solid $yellow;
+    overflow: hidden;
+    margin: 10px;
+    box-shadow: 0px 10px 20px rgba(1,1,1,.6);
+    position: relative;
+    object-fit: contain;
+    cursor: pointer;
+}
+
+.op-tile-image {
+    width: 100%;
+    height: auto;
+    margin-top: 15px;
+    transition: transform 3s;
+    display: block;
+
+    &:hover,
+    &:active {
+        transform: scale(1.2);
+    }
+}
+
+@media only screen and (max-width: 1024px) {
+    .op-select {
+        width: 100%;
+        margin: 20px 0;
+    }
+}
+
+@media only screen and (max-width: 500px) {
+    .op-container {
+        grid-template-columns: repeat(3, 33.33%);
+    }
+}

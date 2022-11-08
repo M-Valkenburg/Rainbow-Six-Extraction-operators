@@ -1,26 +1,38 @@
-<template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
-</template>
-
-<script>
-import HelloWorld from './components/HelloWorld.vue'
+<script lang="js">
+import operators from './data/operators.js';
+import HeaderBanner from './components/Header.vue';
+import OpSelect from './components/OpSelect.vue';
+import OpDisplay from './components/OpDisplay.vue';
 
 export default {
   name: 'App',
   components: {
-    HelloWorld
+    HeaderBanner,
+    OpSelect,
+    OpDisplay
+  },
+  data() {
+    return {
+      opInfo: operators,
+      displayedOp: 0
+    }
+  },
+  methods: {
+    setDisplayedOp(index) {
+      return this.displayedOp = index
+    }
   }
 }
 </script>
 
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
+<style lang="scss">
+@import './app.scss';
 </style>
+
+<template>
+  <HeaderBanner/>
+  <section>
+    <OpSelect :ops="opInfo" @update-op="setDisplayedOp" />
+    <OpDisplay :op="opInfo[displayedOp]" />
+  </section>
+</template>
