@@ -13,6 +13,9 @@ export default {
         },
         updateOp(index) {
             this.$emit('update-op', index)
+        },
+        scrollToTop() {
+            document.documentElement.scrollTo(0, 0);
         }
     }
 }
@@ -24,11 +27,11 @@ export default {
 
 <template>
     <div className="op-select">
-        <div className="op-container">
+        <div className="op-container --aspect-ratio: 1/2;">
             <div 
                 className="op-tile"
                 v-for="(op, index) in ops" :key="index"  
-                @click="playSound(), updateOp(index)"
+                @click="playSound(), updateOp(index), scrollToTop()"
             >
                 <img
                     className="op-tile-image"
