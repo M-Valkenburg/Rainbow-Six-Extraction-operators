@@ -2,21 +2,19 @@
 
 .op-select {
     width: 50%;
-    display: flex;
-    justify-content: flex-end;
+    padding: 0 10px;
 }
 
 .op-container {
-    width: 97.5%;
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    grid-column-gap: 10px;
-    grid-row-gap: 0;
+    grid-column-gap: 16px;
+    grid-row-gap: 16px;
     margin: 0 auto;
 }
 
 .op-container > * {
-    width: 97.5%;
+    width: 100%;
 }
 
 .op-container > [style^='--aspect-ratio']::before {
@@ -32,15 +30,10 @@
     background-image: linear-gradient($blue 30%, $yellow 100%);
     border: 2px solid $yellow;
     overflow: hidden;
-    margin: 10px;
     box-shadow: 0px 10px 20px rgba(1,1,1,.6);
     position: relative;
     object-fit: contain;
     cursor: pointer;
-
-    &:not(:last-of-type) {
-        margin-right: 10px;
-    }
 }
 
 .op-tile-image {
@@ -60,8 +53,11 @@
     .op-select {
         width: 100%;
         margin: 20px 0;
-        justify-content: center;
     }
+
+    .op-container {
+        margin: 0;
+    }    
 }
 
 @media only screen and (max-width: 500px) {
